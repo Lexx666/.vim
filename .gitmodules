@@ -7,3 +7,9 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline
+[submodule "bundle/phpDocumentor"]
+	path = bundle/phpDocumentor
+	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
