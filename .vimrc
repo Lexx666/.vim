@@ -52,9 +52,18 @@ set encoding=UTF-8
 
 
 "=======nice statusline==========
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [HEX=\%02.2B]\ [POS=%l,%v][%p%%]\ [LEN=%L] 
 "and always display status
 set laststatus=2
+
+" color statusline on insert
+:au InsertEnter * hi StatusLine ctermfg=green guifg=green
+:au InsertLeave * hi StatusLine ctermfg=yellow guifg=yellow
+
+"=======vim-powerline==========
+" to enable fancy symbols just execute: cd ~/.fonts/ && git clone https://github.com/scotu/ubuntu-mono-powerline.git && cd ~
+" let g:Powerline_symbols = 'fancy'
 
 "=============TABS==============
 set autoindent		"autoindention
@@ -65,6 +74,7 @@ set tabstop=4
 "==================================================================
 "==============================COLOR===============================
 "==================================================================
+"set t_Co=256
 set background=dark
 
 
@@ -138,13 +148,16 @@ imap <c-f> <ESC>:TlistToggle <CR>i
 "===========================TEXTBLOCKS=============================
 "==================================================================
 nnoremap <c-c> A // [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
-nnoremap <c-x> o // [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
+nnoremap <c-x> O// [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
 
 "==================================================================
 "===========================PHP DOC================================
 "==================================================================
 "source ~/.vim/php-doc.vim
-imap <C-o> :exe PhpDoc()<CR>i
+inoremap <C-d> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-d> :call PhpDocSingle()<CR>
+vnoremap <C-d> :call PhpDocRange()<CR>
+
 
 "==================================================================
 "===========================VIM Help===============================
@@ -154,7 +167,7 @@ imap <C-o> :exe PhpDoc()<CR>i
 "==================================================================
 "==========================QUICK PAIRS=============================
 "==================================================================
-let mapleader=","
+let mapleader="°"
 imap <Leader>' ''<ESC>i
 imap <Leader>" ""<ESC>i
 imap <Leader>( ()<ESC>i
