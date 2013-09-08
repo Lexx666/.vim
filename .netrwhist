@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/'
+let g:netrw_dirhist_2='/media/truecrypt1'
+let g:netrw_dirhist_3='/'
+let g:netrw_dirhist_4='/etc/xdg/autostart'
+let g:netrw_dirhist_5='/media'
+let g:netrw_dirhist_6='/'
+let g:netrw_dirhist_7='/home/tom/repository/truecrypt-7.1a-source'
