@@ -1,3 +1,4 @@
+" .vimrc by Tom Schoenlau
 "==================================================================
 "==========================BASICS==================================
 "==================================================================
@@ -92,11 +93,13 @@ map <c-up> :t.<CR><up>
 imap <c-up> <ESC>:t.<CR><up>i
 
 "move lines with up and down
-map <s-down> :m+1<CR>
-imap <s-down> <ESC>:m+1<CR>i
+map <s-down> :m+1<CR>==
+imap <s-down> <ESC>:m+1<CR>==gi
+vmap <s-down> :m'>+1<CR>gv=gv
 
-map <s-up> :m-2<CR>
-imap <s-up> <ESC>:m-2<CR>i
+map <s-up> :m-2<CR>==
+imap <s-up> <ESC>:m-2<CR>==gi
+vmap <s-up> :m-2<CR>gv=gv
 
 " indent with arrowkeys
 map <S-Right> >>^
@@ -142,6 +145,8 @@ map tt <C-]>
 map <c-f> :TlistToggle <CR>
 imap <c-f> <ESC>:TlistToggle <CR>i
 
+" only display classes and functions in Taglist
+let tlist_php_settings = 'php;c:class;f:function'
 
 
 "==================================================================
