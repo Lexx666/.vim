@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/media/truecrypt1/repository/vdp/px-docs-root/ma21180'
-let g:netrw_dirhist_2='/media/truecrypt1/repository/vdp/px-docs/email'
