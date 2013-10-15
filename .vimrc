@@ -155,11 +155,8 @@ let tlist_php_settings = 'php;c:class;f:function'
 "===========================TEXTBLOCKS=============================
 "==================================================================
 nnoremap <c-c> A // [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
-<<<<<<< HEAD
 nnoremap <c-x> o// [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
-=======
 nnoremap <c-x> O// [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
->>>>>>> 36425dea1ac7c6eeac6cb331e5e951bed7cbeaef
 
 "==================================================================
 "===========================PHP DOC================================
