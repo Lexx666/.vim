@@ -144,6 +144,10 @@ call SetTags()
 map tt <C-]>
 
 "-------- taglist plugin-----------
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 1
+let Tlist_Exit_OnlyWindow = 1
+
 map <c-f> :TlistToggle <CR>
 imap <c-f> <ESC>:TlistToggle <CR>i
 
@@ -155,8 +159,7 @@ let tlist_php_settings = 'php;c:class;f:function'
 "===========================TEXTBLOCKS=============================
 "==================================================================
 nnoremap <c-c> A // [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
-nnoremap <c-x> o// [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
-nnoremap <c-x> O// [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
+" nnoremap <c-x> O// [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
 
 "==================================================================
 "===========================PHP DOC================================

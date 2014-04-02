@@ -10,3 +10,6 @@
 [submodule "bundle/phpDocumentor"]
 	path = bundle/phpDocumentor
 	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = https://github.com/tmhedberg/matchit.git
