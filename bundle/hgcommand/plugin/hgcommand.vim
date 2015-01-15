@@ -27,3 +27,21 @@ function! s:HGBlame()
 endfunction
 
 command! -complete=shellcmd Blame call s:HGBlame()
+
+"show hg diff, when commiting
+function! HgCommitDiff()
+    "In .hgrc editor option I call vim "+HgCiDiff()"
+    "It opens new split with diff inside
+    rightbelow  vnew
+    setlocal buftype=nofile
+    :.!hg diff
+    setlocal ft=diff
+    wincmd p
+    setlocal spell spelllang=en_us
+    cnoremap wq wqa
+    cnoremap q qa
+    start
+endfunction
+
+command! -nargs=* HgCommitDiff call HgCommitDiff()
+

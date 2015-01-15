@@ -5,9 +5,13 @@
 
 "load plugins from bundle/plugin
 execute pathogen#infect()
+call pathogen#helptags()
 
 set nocp	"cursors in edit-mode
 set backspace=2 "backspace in edit mode
+set wildmenu
+
+"================searching=================
 set ignorecase  "ignore case when searching
 
 set sidescroll=20
@@ -20,14 +24,21 @@ set sidescrolloff=20
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
-autocmd BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") |
-\   exe "normal g`\"" |
-\ endif
-au BufWinLeave *.* mkview
-if argc()
-	au BufWinEnter *.* silent loadview
-endif
+
+" autocmd BufReadPost *
+" \ if line("'\"") > 0 && line("'\"") <= line("$") |
+" \   exe "normal g`\"" |
+" \ endif
+" au BufWinLeave *.* mkview
+" if argc()
+" 	au BufWinEnter *.* silent loadview
+" endif
+
+" Remind position of curser in file for next start of this file
+augroup resCur
+	autocmd!
+	autocmd BufReadPost * call setpos(".", getpos("'\""))
+augroup END
 
 
 
@@ -50,15 +61,25 @@ set lbr			"Sets linebreak, so words are not split when wrap is on
 
 "=======encoding=======
 set fileencoding=latin1
-set fileencodings=latin1
+set fileencodings=latin1,utf-8
 set encoding=UTF-8
-
 
 "=======nice statusline==========
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [HEX=\%02.2B]\ [POS=%l,%v][%p%%]\ [LEN=%L] 
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [HEX=\%02.2B]\ [POS=%l,%v][%p%%]\ [LEN=%L] 
 "and always display status
 set laststatus=2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#whitespace#enabled = 0
+" let g:airline_section_warning = ''
+
 
 " color statusline on insert
 :au InsertEnter * hi StatusLine ctermfg=green guifg=green
@@ -77,9 +98,9 @@ set tabstop=4
 "==================================================================
 "==============================COLOR===============================
 "==================================================================
-"set t_Co=256
+set t_Co=256
 set background=dark
-
+colorscheme koehler
 
 "==================================================================
 "==============================KEYMAPS=============================
@@ -158,8 +179,12 @@ let tlist_php_settings = 'php;c:class;f:function'
 "==================================================================
 "===========================TEXTBLOCKS=============================
 "==================================================================
-nnoremap <c-c> A // [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
-" nnoremap <c-x> O// [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>pA: 
+"-----comment with datestamp
+nnoremap <c-c> A // [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>p==A: 
+inoremap <c-c> <ESC>A // [] Tom Schoenlau (u_40) <ESC>"=strftime("%Y-%m-%d")<CR>p==A: 
+"-----insert simple datestamp
+nnoremap <c-z> <ESC>"=strftime("%Y-%m-%d %H:%M:%S")<CR>pA 
+inoremap <c-z> <ESC>"=strftime("%Y-%m-%d %H:%M:%S")<CR>pA 
 
 "==================================================================
 "===========================PHP DOC================================
