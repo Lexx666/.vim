@@ -19,3 +19,6 @@
 [submodule "bundle/vim-lawrencium"]
 	path = bundle/vim-lawrencium
 	url = https://github.com/ludovicchabant/vim-lawrencium.git
+[submodule "bundle/vim-easy-align"]
+	path = bundle/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git

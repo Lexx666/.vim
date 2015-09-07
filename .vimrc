@@ -162,7 +162,7 @@ endfunction
 call SetTags()
 
 "ctags. jump to function
-map tt <C-]>
+map tt g<C-]>
 
 "-------- taglist plugin-----------
 let Tlist_GainFocus_On_ToggleOpen = 1
@@ -203,10 +203,10 @@ vnoremap <C-d> :call PhpDocRange()<CR>
 "==================================================================
 "==========================QUICK PAIRS=============================
 "==================================================================
-let mapleader="°"
-imap <Leader>' ''<ESC>i
-imap <Leader>" ""<ESC>i
-imap <Leader>( ()<ESC>i
-imap <Leader>{ {<ESC>o}<ESC><up>o
-imap <Leader>[ []<ESC>i
+let mapleader="ß"
+imap <leader>' ''<ESC>i
+imap <leader>" ""<ESC>i
+imap <leader>( ()<ESC>i
+imap <leader>{ {<ESC>o}<ESC><up>o
+imap <leader>[ []<ESC>i
 
