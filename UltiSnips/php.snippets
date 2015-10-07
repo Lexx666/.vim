@@ -1,0 +1,44 @@
+snippet <?
+<?php
+${0}
+?>
+endsnippet
+
+snippet plugin_show
+array(
+	'plugin_created'                  => '$1',
+	'plugin_createdby'                => '$2',
+
+	'plugin_title'                    => '$3',
+	'plugin'                          => 'core_show_main',
+	'plugin_table'                    => '$4',
+	'plugin_id'                       => $this->GET_secure['$4_id'],
+	'plugin_edit_yn'                  => $5,
+	'plugin_fields'                   => array(
+		'$4_id',
+		//'$4_',
+	),
+	'plugin_position'                 => 'stick_to_previous',
+),
+endsnippet
+
+
+snippet plugin_list
+array( 
+	'plugin_created'                  => '$1',
+	'plugin_createdby'                => '$2',
+
+	'plugin_title'                    => '$3',
+	'plugin'                          => 'core_list_main',
+	'plugin_table'                    => '$4',
+	'plugin_cond'                     => '$4_id="'.$this->GET_secure['$4_id'].'"',
+	//'plugin_order'                    => '$4_id ASC',
+	'plugin_fields'                   => array(
+		'$4_status',
+		'$4_id',
+		'$4_name',
+		//'$4_',
+	), 
+	'plugin_position'                 => 'stick_to_previous',
+),
+endsnippet

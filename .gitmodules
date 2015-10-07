@@ -25,3 +25,6 @@
 [submodule "bundle/vim-colortuner"]
 	path = bundle/vim-colortuner
 	url = https://github.com/zefei/vim-colortuner.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
