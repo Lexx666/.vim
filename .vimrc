@@ -217,8 +217,12 @@ imap <leader>[ []<ESC>i
 vmap <Enter> <Plug>(EasyAlign)
 
 "==================================================================
-"=============================ultisnips============================
+"===========================Complition=============================
 "==================================================================
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+"=============================ultisnips============================
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
